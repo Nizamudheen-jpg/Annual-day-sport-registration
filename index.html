@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Day Registration</title>
+
+<style>
+body {
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Professional Card */
+.card {
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+h3 {
+    color: #333;
+}
+
+/* Table Inputs */
+table input, table textarea, table select {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Buttons */
+button {
+    padding: 8px 20px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #e6e6e6;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #dcdcdc;
+}
+
+/* Sport Row */
+.sport-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+</style>
+
+<script>
+function limitSportsSelection() {
+    let checkboxes = document.querySelectorAll('input[name="sport"]');
+    let selectedCount = 0;
+
+    checkboxes.forEach(box => {
+        if (box.checked) selectedCount++;
+    });
+
+    if (selectedCount > 3) {
+        alert("You can only select 3 sports.");
+        event.target.checked = false;
+    }
+}
+
+.sport-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+</script>
+
+</head>
+<body>
+  <!-- School Logo -->
+<div style="text-align:center; margin-top:20px;">
+  <img src="1.jpg" alt="Loyola International School Logo" style="width:120px; height:auto;">
+</div>
+
+
+
+  <h2>Sport Day Registration Form</h2>
+
+  <!-- School Information Section -->
+  <div class="card" style="margin-bottom:20px;">
+    <h3>School Announcement</h3>
+    <p>
+      Welcome to the registration page for our Annual School Sports Day. Students may fill out this form to register and choose up to three sports.
+    </p>
+    <h3>Instructions for Students & Parents</h3>
+    <ul>
+      <li>Students may select a maximum of <b>three sports only</b>.</li>
+      <li>All entered information must be correct and complete.</li>
+      <li>A valid student ID must be uploaded for verification.</li>
+      <li>Last date for submission: <b>29/11/2025</b>.</li>
+    </ul>
+  </div>
+
+<!-- Main Form -->
+<div class="card">
+
+<table width="100%">
+<form>
+
+<tr>
+    <td>First Name:</td>
+    <td><input type="text"></td>
+</tr>
+
+<tr>
+    <td>Last Name:</td>
+    <td><input type="text"></td>
+</tr>
+
+<tr>
+    <td>Password:</td>
+    <td><input type="password" maxlength="12"></td>
+</tr>
+
+<tr>
+    <td>Confirm Password:</td>
+    <td><input type="password" maxlength="12"></td>
+</tr>
+
+<tr>
+    <th colspan="2">
+        <p><b>Select only 3 sports</b></p>
+        <p>Last date: 29/11/25</p>
+    </th>
+</tr>
+
+<!-- SPORTS -->
+<tr>
+<td colspan="2">
+
+<b>Select your sports:</b><br><br>
+
+<div class="sport">
+    <img src="https://img.icons8.com/color/96/football.png" class="sport-icon">
+    Football <input type="checkbox" name="sport" onclick="limitSportsSelection()">
+</div>
+
+<div class="sport">
+    <img src="https://img.icons8.com/color/96/basketball.png" class="sport-icon">
+    Basketball <input type="checkbox" name="sport" onclick="limitSportsSelection()">
+</div>
+
+<div class="sport">
+    <img src="https://img.icons8.com/color/96/hockey.png" class="sport-icon">
+    Hockey <input type="checkbox" name="sport" onclick="limitSportsSelection()">
+</div>
+
+<div class="sport">
+    <img src="https://img.icons8.com/color/96/swimming.png" class="sport-icon">
+    Swimming <input type="checkbox" name="sport" onclick="limitSportsSelection()">
+</div>
+
+<div class="sport">
+    <img src="https://img.icons8.com/color/96/running.png" class="sport-icon">
+    100m Running <input type="checkbox" name="sport" onclick="limitSportsSelection()">
+</div>
+
+<div class="sport">
+    <img src="https://img.icons8.com/color/96/running.png" class="sport-icon">
+    200m Running <input type="checkbox" name="sport" onclick="limitSportsSelection()">
+</div>
+
+<div class="sport">
+    <img src="https://img.icons8.com/color/96/running.png" class="sport-icon">
+    300m Running <input type="checkbox" name="sport" onclick="limitSportsSelection()">
+</div>
+
+</td>
+</tr>
+
+<tr>
+<td>Email:</td>
+<td><input type="email"></td>
+</tr>
+
+<tr>
+<td>Phone:</td>
+<td><input type="tel"></td>
+</tr>
+
+<tr>
+<td>Date of Birth:</td>
+<td><input type="date"></td>
+</tr>
+
+<tr>
+<td>Age:</td>
+<td><input type="number" min="5" max="100"></td>
+</tr>
+
+<tr>
+<td>Gender:</td>
+<td>
+    <input type="radio" name="gender"> Male
+    <input type="radio" name="gender"> Female
+    <input type="radio" name="gender"> Other
+</td>
+</tr>
+
+<tr>
+<td>Upload ID:</td>
+<td><input type="file"></td>
+</tr>
+
+<tr>
+<td>Grade:</td>
+<td>
+    <select>
+        <option>Select</option>
+        <option>Grade 6</option>
+        <option>Grade 7</option>
+        <option>Grade 8</option>
+        <option>Grade 9</option>
+        <option>Grade 10</option>
+    </select>
+</td>
+</tr>
+
+<tr>
+<td>Address:</td>
+<td><textarea rows="3"></textarea></td>
+</tr>
+
+<tr>
+<td>Time Preference:</td>
+<td><input type="time"></td>
+</tr>
+
+<tr>
+<td colspan="2" style="text-align:center;">
+    <button type="submit">Submit</button>&nbsp;
+    <button type="reset">Reset</button>
+</td>
+</tr>
+
+</form>
+</table>
+
+</div>
+
+</body>
+</html>
